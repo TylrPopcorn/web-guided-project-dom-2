@@ -17,8 +17,24 @@ const modal = document.querySelector(".modal");
 // 👉 TASK 2- Demo handling click events on button#launchButton, using:
 //  A- HTML inside index.html
 //  B- The DOM's element.onclick attribute
+launchButton.onclick = function() {
+  console.log("Oh noes! What happened to my other onclick?!");
+}
 //  C- element.addEventListener('click', callback)
+launchButton.addEventListener("click", function(evt) {
+  console.log(`
+    event type:     ${evt.type}
+    event target:   ${evt.target.nodeName}
+  `)
+})
 
+document.addEventListener("click", function(e) {
+  if (e.target === launchButton) {
+    console.log("LAUNCHING BAY BEE!!");
+  } else {
+    console.log("Ugh, just another Tuesday...");
+  }
+})
 
 // 👉 TASK 3- Create a function that launches!
 // It should open the confirmation modal.
