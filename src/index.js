@@ -60,12 +60,20 @@ launchButton.addEventListener("click", launch);
 // 👉 TASK 4- Create a function to confirm the launch.
 // It should close the modal and display a success report.
 // Add it as a listener for clicks on the confirmation button.
-
+function confirm(evt) {
+  modal.classList.add("off");
+  successMessage.classList.remove("off");
+}
+confirmButton.addEventListener("click", confirm);
 
 // 👉 TASK 5- Create a function to cancel the launch.
 // It should close the modal and display a failure report.
 // Add it as a listener for clicks on the cancellation button.
-
+function cancel() {
+  modal.classList.add("off");
+  failureMessage.classList.remove("off");
+}
+cancelButton.addEventListener("click", cancel);
 
 // 👉 TASK 6- Create a function that closes the modal if
 // the user hits the Escape key on their keyboard.
