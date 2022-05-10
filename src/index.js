@@ -86,11 +86,11 @@ function escKey(event) {
     modal.classList.add("off");
   }
 }
-document.addEventListener("keydown", escKey);
-const name = "Casey"; // ["C", "a", "s", "e", "y"]; name.length;
-console.log(Array.from(name).reverse().join(""));
-const date = "2022-04-18";
-console.log(date.split("-"));
+// document.addEventListener("keydown", escKey);
+// const name = "Casey"; // ["C", "a", "s", "e", "y"]; name.length;
+// console.log(Array.from(name).reverse().join(""));
+// const date = "2022-04-18";
+// console.log(date.split("-"));
 
 Array.from(document.links).forEach(link => {
   link.addEventListener("click", function(evt) {
@@ -104,7 +104,17 @@ Array.from(document.links).forEach(link => {
 // It should also console.log the CURRENT target 🧭 of the event.
 // Play with stopPropagation and stopImmediatePropagation.
 
+// in CSS how do you target ALL elements?......*
+document.querySelectorAll("*").forEach(elem => elem.addEventListener("click", e => {
+  console.log(e.target);
+  console.log(e.currentTarget);
+  console.log("\n");
+}))
 
+modal.addEventListener("click", evt => {
+  console.log("YOU SHALL NOT PASS!");
+  evt.stopPropagation();
+})
 
 // 👉 TASK 8- [STRETCH] Create helper functions to make the code
 // more readable in tasks 3, 4, 5, 6
