@@ -87,10 +87,23 @@ function escKey(event) {
   }
 }
 document.addEventListener("keydown", escKey);
+const name = "Casey"; // ["C", "a", "s", "e", "y"]; name.length;
+console.log(Array.from(name).reverse().join(""));
+const date = "2022-04-18";
+console.log(date.split("-"));
+
+Array.from(document.links).forEach(link => {
+  link.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    console.log(`The ${evt.target.textContent} link is BROKEN BAY BEE!`);
+  })
+})
+
 // 👉 TASK 7- Add to ALL ELEMENTS ON THE PAGE an event listener for click events.
 // It should console.log the target 🎯 of the event.
 // It should also console.log the CURRENT target 🧭 of the event.
 // Play with stopPropagation and stopImmediatePropagation.
+
 
 
 // 👉 TASK 8- [STRETCH] Create helper functions to make the code
