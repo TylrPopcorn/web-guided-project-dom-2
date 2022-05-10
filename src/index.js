@@ -28,18 +28,34 @@ launchButton.addEventListener("click", function(evt) {
   `)
 })
 
-document.addEventListener("click", function(e) {
-  if (e.target === launchButton) {
-    console.log("LAUNCHING BAY BEE!!");
-  } else {
-    console.log("Ugh, just another Tuesday...");
-  }
-})
+// document.addEventListener("click", function(e) {
+//   if (e.target === launchButton) {
+//     console.log("LAUNCHING BAY BEE!!");
+//   } else {
+//     console.log("Ugh, just another Tuesday...");
+//   }
+// })
 
 // 👉 TASK 3- Create a function that launches!
 // It should open the confirmation modal.
 // Add it as an event listener for click events on the launch button.
+function launch(evt) {
+  modal.classList.remove("off");
+}
+launchButton.addEventListener("click", launch);
 
+/**
+ * What are the two ways of writing a function in javascript
+ * 1.) Function declaration -> HOISTED!
+ * 2.) Function expression  -> STAYS IN SCOPE!
+ * 
+ * function blah() {}
+ * var name = "Casey"
+ * 
+ * const blah = () => {}
+ * const name = "Casey"
+ * let name = "Casey"
+ */
 
 // 👉 TASK 4- Create a function to confirm the launch.
 // It should close the modal and display a success report.
